@@ -1,21 +1,15 @@
+import React from 'react';
+import Slider from './components/Slider';
 import './App.css';
+
+// Images
+import florence05 from './assets/florence05.png';
+import florence05_art from './assets/florence05-art.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Slider photo={florence05} art={florence05_art} />
     </div>
   );
 }

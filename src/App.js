@@ -1,17 +1,33 @@
-import React from 'react';
-import Slider from './components/Slider';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-// Images
-import florence05 from './assets/florence05.png';
-import florence05_art from './assets/florence05-art.png';
+import { GlobalStyle } from "./theme";
+import { Nav, PageContainer } from "./components";
+import { ExplorePage, SubmitPage, AboutPage, HomePage } from "./pages";
 
-function App() {
-  return (
-    <div className="App">
-      <Slider photo={florence05} art={florence05_art} />
-    </div>
-  );
+export default function App() {
+    return (
+        <BrowserRouter>
+            <GlobalStyle />
+            <div className="App">
+                <Nav />
+                <PageContainer>
+                    <Switch>
+                        <Route path="/explore">
+                            <ExplorePage />
+                        </Route>
+                        <Route path="/submit">
+                            <SubmitPage />
+                        </Route>
+                        <Route path="/about">
+                            <AboutPage />
+                        </Route>
+                        <Route path="/">
+                            <HomePage />
+                        </Route>
+                    </Switch>
+                </PageContainer>
+            </div>
+        </BrowserRouter>
+    );
 }
-
-export default App;

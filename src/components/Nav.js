@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { darkGrey, lightGrey } from "../theme";
+export const NAV_HEIGHT = "2em";
 
 const NavTitle = styled.h1`
     font-size: 1.5em;
@@ -12,7 +12,7 @@ const NavTitle = styled.h1`
     text-transform: uppercase;
 
     & > a {
-        color: black;
+        color: ${(props) => props.theme.color.textPrimary};
         text-decoration: none;
     }
 `;
@@ -24,10 +24,10 @@ const NavItem = styled.li`
 
 const StyledLink = styled(Link)`
     text-decoration: none;
-    color: black;
+    color: ${(props) => props.theme.color.textPrimary};
 
     &:hover {
-        color: ${darkGrey};
+        color: ${(props) => props.theme.color.textSecondary};
     }
 `;
 
@@ -41,16 +41,16 @@ const LinkContainer = styled.ul`
 const NavBar = styled.nav`
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: ${(props) => props.theme.zIndex.nav};
     width: 100%;
-    height: 2em;
-    font-family: "Sorts Mill Goudy", serif;
+    height: ${NAV_HEIGHT};
+    font-family: ${(props) => props.theme.fontFamily.body};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
+    background: ${(props) => props.theme.color.backgroundPrimary};
     padding: 12px 20px;
-    border-bottom: 1px solid ${lightGrey};
+    border-bottom: 1px solid ${(props) => props.theme.color.outline};
 `;
 
 export const Nav = () => {

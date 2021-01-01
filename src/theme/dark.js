@@ -5,6 +5,8 @@ export const darkTheme = {
         backgroundPrimary: '#383838',
         backgroundSecondary: '#646464',
 
+        outline: '#909090',
+
         textPrimary: '#f5f5f5',
         textSecondary: '#efebd8',
         textTertiary: '#d8846a',
